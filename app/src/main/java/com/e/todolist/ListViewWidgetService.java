@@ -1,6 +1,8 @@
 package com.e.todolist;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -55,10 +57,20 @@ class AppWidgetListView implements RemoteViewsService.RemoteViewsFactory {
 
         views.setTextViewText(R.id.titleTextView, dataList.get(position).title);
         views.setTextViewText(R.id.subTitleTextView, dataList.get(position).subTitle);
+        views.setImageViewResource(R.id.imageView2, R.drawable.ic_calendar);
+        Log.e("msg", String.valueOf(dataList.get(position).reminder));
 
+        if(!dataList.get(position).reminder){
+            Log.e("msg", String.valueOf(dataList.get(position).reminder));
+            views.setViewVisibility(R.id.imageView2, View.INVISIBLE);
+        }
+        else{
+            views.setViewVisibility(R.id.imageView2, View.VISIBLE);
+        }
         Intent fillInIntent = new Intent();
         fillInIntent.putExtra("ItemTitle",dataList.get(position).title);
         fillInIntent.putExtra("ItemSubTitle",dataList.get(position).subTitle);
+        fillInIntent.putExtra("reminder", dataList.get(position).reminder);
         views.setOnClickFillInIntent(R.id.parentView, fillInIntent);
         return views;
     }

@@ -3,4 +3,10 @@
     <string name = "name">Todo List</string>
     <string name="add">Add new note</string>
     <string name="settings">settings</string>
+    <string name="edit">Add &amp; Edit</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="reminder">Reminder</string>
+    <string name="OK">OK</string>
+    <string name="checklist">CheckList</string>
 </resources>

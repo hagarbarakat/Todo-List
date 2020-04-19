@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/widgetImageView"
+        android:layout_width="71dp"
+        android:layout_height="53dp"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:contentDescription="@string/name"
+        android:src="@drawable/ic_checkmark_2" />
 
 
     <TextView
@@ -20,8 +23,9 @@
         android:textColor="#000"
         android:padding="10dp"
         android:layout_gravity="center_horizontal"
-        android:text="Click"
+        android:text="@string/name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:focusable="true" />
 
 </LinearLayout>

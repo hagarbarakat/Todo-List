@@ -7,42 +7,22 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import java.util.Objects;
 
 public class ExampleAppWidgetProvider  extends AppWidgetProvider {
-    ImageButton button;
-    private static final String ACTION_UPDATE_CLICK =
-            "com.example.myapp.action.UPDATE_CLICK";
-
-    private static int mCount = 0;
-
-    private static String getMessage() {
-        return String.valueOf(mCount++);
-    }
-    private PendingIntent getPendingSelfIntent(Context context, String action) {
-        // An explicit intent directed at the current class (the "self").
-        Intent intent = new Intent(context, getClass());
-        intent.setAction(action);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
-    }
 
     public void onUpdate(final Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
 
-        //String message = getMessage();
         Toast.makeText(context, "Add", Toast.LENGTH_LONG).show();
-        // Loop for every App Widget instance that belongs to this provider.
-        // Noting, that is, a user might have multiple instances of the same
-        // widget on
-        // their home screen.
+
+        /*Loop for every App Widget instance that belongs to this provider.
+         Users might have multiple instances of the same
+         widget on their home screen.*/
+
         for (int appWidgetID : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetID);
         }

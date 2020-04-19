@@ -1,40 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f0f0f0">
+    android:background="@drawable/background">
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/titleTextView2"
+        android:layout_alignBottom="@+id/titleTextView2"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/titleTextView2"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/titleTextView2"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/checklist"
+        android:textColor="#000"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/centerTextView"
+        style="@style/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/imageButton"
+        android:text="@string/edit"
         android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Welcome to Second Activity"/>
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/titleTextView"
-        android:text=""
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:layout_below="@id/centerTextView"
+        android:text="@string/title"
         android:textColor="#000"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/subTitleTextView"
-        android:text=""
-        android:textColor="#696969"
-        android:layout_marginTop="5dp"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:layout_below="@id/titleTextView"
-        android:textSize="16sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="@string/description"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTextView"
+        android:layout_alignStart="@+id/titleTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="90dp"
+        android:ems="10"
+        android:background="@android:color/transparent"
+
+        android:inputType="textPersonName"
+        android:hint="@string/title"
+        android:textColor="#696969" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subTitleTextView"
+        android:layout_alignStart="@+id/subTitleTextView"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:background="@android:color/transparent"
+        android:inputType="textPersonName"
+        android:hint="@string/description"
+        android:textColor="#696969"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/reminder"
+        style="@style/title"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-4dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/list_selector_background"
+        app:srcCompat="@drawable/ic_back" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="18dp"
+        android:text="@string/OK" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/checkedTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_below="@+id/titleTextView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="203dp"
+        android:layout_marginBottom="29dp"
+        android:cursorVisible="false"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:hint="@string/checklist" />
 
 
 </RelativeLayout>

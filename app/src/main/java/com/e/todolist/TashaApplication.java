@@ -1,5 +1,6 @@
 package com.e.todolist;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,10 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by tashariko on 26/08/17.
- */
 
+@SuppressLint("Registered")
 public class TashaApplication extends Application {
 
     public static final String PREF_KEY_JSON = "jsonData";
