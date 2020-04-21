@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).hide();
         list.clear();
-        list.add(new List_item("Title 1", "this is subtitle 1", false));
-        list.add(new List_item("Title 2", "this is subtitle 2", true));
+        list.add(new List_item("Title 1", "this is subtitle 1", false, true, true));
+        list.add(new List_item("Title 2", "this is subtitle 2", true, false, false));
         TextView textView = (TextView) findViewById(R.id.textView);
         ListView listView = (ListView) findViewById(R.id.listView);
         final ArrayAdapter<List_item> adapter = new ListItem(MainActivity.this, 0, list);

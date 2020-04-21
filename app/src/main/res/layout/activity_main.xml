@@ -13,10 +13,8 @@
         android:layout_height="40dp"
         android:layout_alignStart="@+id/imageView3"
         android:layout_alignTop="@+id/imageView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="68dp"
         android:layout_marginBottom="0dp"
         android:elevation="20dp"
         android:text="@string/name"
@@ -48,5 +46,18 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/header" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignEnd="@+id/imageView3"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="0dp"
+        android:foregroundGravity="center"
+        app:srcCompat="@drawable/ic_garbage" />
 
 </RelativeLayout>

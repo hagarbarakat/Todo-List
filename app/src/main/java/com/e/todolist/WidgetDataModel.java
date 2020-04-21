@@ -2,7 +2,6 @@ package com.e.todolist;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,11 +9,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.e.todolist.TashaApplication.PREF_KEY_JSON;
+import static com.e.todolist.JSON.PREF_KEY_JSON;
 
-/**
- * Created by tashariko on 26/08/17.
- */
 
 public class WidgetDataModel {
 
@@ -38,14 +34,10 @@ public class WidgetDataModel {
                     jsonObject.put("subTitle", "This is subtitle: " + (i + 1));
                     if(i%2 == 0){
                         jsonObject.put("reminder",Boolean.TRUE);
-                        Log.e("msg","true");
                     }
                     else{
                         jsonObject.put("reminder", Boolean.FALSE);
                     }
-                    Log.e("msg", jsonObject.getString("reminder"));
-                    Log.e("msg", jsonObject.getString("title"));
-                    Log.e("msg", jsonObject.toString());
                     jsonArray.put(jsonObject);
                 }
                 sharedPref.edit().putString(PREF_KEY_JSON,jsonArray.toString()).apply();
@@ -62,7 +54,6 @@ public class WidgetDataModel {
         if(list.isEmpty()) {
             SharedPreferences sharedPref = context.getSharedPreferences("SharedPrefs", Context.MODE_PRIVATE);
             String json = sharedPref.getString(PREF_KEY_JSON, "[]");
-            Log.e("msg",json);
 
             try {
                 JSONArray jsonArray = new JSONArray(json);
@@ -71,10 +62,8 @@ public class WidgetDataModel {
 
                     WidgetDataModel model = new WidgetDataModel();
                     model.title = object.getString("title");
-                    //model.reminder = object.getString("reminder");
                     model.subTitle = object.getString("subTitle");
-                   model.reminder = object.getBoolean("reminder");
-                    Log.e("msg",String.valueOf(model.reminder));
+                    model.reminder = object.getBoolean("reminder");
                     list.add(model);
 
                 }

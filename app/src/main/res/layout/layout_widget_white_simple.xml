@@ -28,14 +28,24 @@
             android:textSize="16sp"
             android:textStyle="bold"
             tools:ignore="RtlHardcoded" />
+
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="431dp"
         android:divider="#f0f0f0"
         android:dividerHeight="1dp"
-        tools:listitem="@layout/list_item_widget" />
+        tools:listitem="@layout/list_item_widget">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/done1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="200dp"
+        />
 
 </LinearLayout>
