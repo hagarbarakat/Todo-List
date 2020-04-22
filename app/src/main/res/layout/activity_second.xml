@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
@@ -42,8 +43,9 @@
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
         android:layout_toEndOf="@+id/imageButton"
+        android:elevation="50dp"
         android:text="@string/edit"
-        android:textColor="#000"
+        android:textColor="#FFF"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -87,24 +89,27 @@
         android:layout_marginEnd="90dp"
         android:ems="10"
         android:background="@android:color/transparent"
-
+        style="@style/title"
         android:inputType="textPersonName"
         android:hint="@string/title"
         android:textColor="#696969" />
 
     <EditText
         android:id="@+id/editText2"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/subTitleTextView"
         android:layout_alignStart="@+id/subTitleTextView"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="10dp"
-        android:ems="10"
+        android:layout_marginEnd="90dp"
         android:background="@android:color/transparent"
-        android:inputType="textPersonName"
+        android:ems="10"
         android:hint="@string/description"
-        android:textColor="#696969"/>
+        android:inputType="textPersonName"
+        android:textColor="#696969" />
 
     <TextView
         android:id="@+id/textView2"
@@ -118,6 +123,12 @@
         style="@style/title"
         android:textColor="#000"
         android:textSize="20sp" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MultiAutoCompleteTextView" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -138,8 +149,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="35dp"
         android:background="@android:drawable/list_selector_background"
+        android:elevation="50dp"
         app:srcCompat="@drawable/ic_back" />
 
     <Button
@@ -149,25 +161,119 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="18dp"
-        android:text="@string/OK" />
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/btn"
+        android:text="@string/OK"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/checkedTextView2"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        app:srcCompat="@drawable/header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/par"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button"
         android:layout_below="@+id/titleTextView2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="203dp"
-        android:layout_marginBottom="29dp"
-        android:cursorVisible="false"
-        android:background="@android:color/transparent"
-        android:gravity="top"
-        android:hint="@string/checklist" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/par"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            app:layout_constraintEnd_toEndOf="@+id/cons"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/white_background" />
+
+        <ImageView
+            android:id="@+id/down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/par"
+            android:layout_alignTop="@+id/imageView5"
+            android:layout_alignEnd="@+id/imageView5"
+            android:layout_alignBottom="@+id/imageView5"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/down_arrow" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/imageView5"
+            android:layout_marginStart="10dp"
+            android:text="@string/list"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/par"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="?attr/colorBackgroundFloating"
+                android:elevation="20dp"
+                android:hint="@string/add"
+                android:paddingStart="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/checklistview" />
+
+            <ListView
+                android:id="@+id/checklistview"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:background="#FFF"
+                android:dividerHeight="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/checklist">
+
+
+            </ListView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

@@ -47,17 +47,20 @@
         android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/header" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/delete"
+        style="@style/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView"
         android:layout_alignEnd="@+id/imageView3"
         android:layout_alignBottom="@+id/textView"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="0dp"
         android:foregroundGravity="center"
-        app:srcCompat="@drawable/ic_garbage" />
+        android:text="@string/delete"
+        android:textColor="#FFF"
+        android:textSize="18sp" />
 
 </RelativeLayout>

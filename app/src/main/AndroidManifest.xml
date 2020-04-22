@@ -19,7 +19,10 @@
 
         <activity android:name=".SecondActivity"
             android:screenOrientation="portrait"/>
-
+        <activity android:name=".Date_Time"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.customTheme1"
+        android:windowSoftInputMode="adjustPan|adjustResize"/>
 
         <service android:name=".WidgetUpdateService"
             android:exported="false">

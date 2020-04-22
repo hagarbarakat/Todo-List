@@ -9,4 +9,6 @@
     <string name="reminder">Reminder</string>
     <string name="OK">OK</string>
     <string name="checklist">CheckList</string>
+    <string name="delete">Delete All</string>
+    <string name="list">List</string>
 </resources>

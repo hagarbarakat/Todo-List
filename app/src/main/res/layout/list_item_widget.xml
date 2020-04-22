@@ -9,7 +9,7 @@
     android:padding="5dp">
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Title"
+            style="@style/title"
             android:textColor="#000"
             android:textSize="15sp" />
 
@@ -36,6 +37,7 @@
             android:id="@+id/subTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/title"
             android:text="Sub Title"
             android:textColor="#696969"
             android:textSize="15sp" />
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:src="@drawable/ic_calendar" />
+        android:src="@drawable/ic_alarm"/>
 
     <ImageView
         android:id="@+id/checklist"

@@ -40,7 +40,7 @@ public class ListItem extends ArrayAdapter<List_item> {
         View view = inflater.inflate(R.layout.list_item_widget, null);
         final TextView Title = (TextView) view.findViewById(R.id.titleTextView);
         TextView Subtitle = (TextView) view.findViewById(R.id.subTitleTextView);
-        final ImageButton checkBox = (ImageButton) view.findViewById(R.id.done);
+        final ImageView checkBox = (ImageView) view.findViewById(R.id.done);
         ImageView reminder = (ImageView) view.findViewById(R.id.reminder);
         ImageView checklist = (ImageView) view.findViewById(R.id.checklist);
         initialize(property, checkBox, Title, view, reminder, checklist);
@@ -51,14 +51,12 @@ public class ListItem extends ArrayAdapter<List_item> {
                 if(!property.isChecked()){
                     Title.setPaintFlags(Title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     checkBox.setImageResource(R.drawable.ic_verified);
-                    property.setChecked(false);
-
+                    property.setChecked(true);
                 }
                 else{
                     Title.setPaintFlags(Title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
                     checkBox.setImageResource(R.drawable.ic_circle);
-                    property.setChecked(true);
-
+                    property.setChecked(false);
                 }
             }
         });
@@ -73,9 +71,9 @@ public class ListItem extends ArrayAdapter<List_item> {
         return view;
     }
 
-    public void initialize(List_item property, ImageButton checkBox, TextView Title, View view, ImageView reminder, ImageView checklist){
+    public void initialize(List_item property, ImageView checkBox, TextView Title, View view, ImageView reminder, ImageView checklist){
         Title = (TextView) view.findViewById(R.id.titleTextView);
-        checkBox = (ImageButton) view.findViewById(R.id.done);
+        checkBox = (ImageView) view.findViewById(R.id.done);
 
         if(property.isChecklist()){
             checklist.setVisibility(View.VISIBLE);
